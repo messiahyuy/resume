@@ -3,146 +3,165 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>黃畯煜 | Full-Stack Developer Portfolio</title>
+    <title>黃畯煜 Jun-Yu | 邁向全端工程師之路</title>
     <style>
         :root {
-            --tech-blue: #00d4ff;
-            --dark-bg: #0a192f;
-            --text-gray: #8892b0;
-            --text-light: #ccd6f6; 
+            --primary-color: #2c3e50; /* 沉穩的審計灰藍 */
+            --accent-color: #3498db;  /* 充滿希望的技術藍 */
+            --bg-color: #f8fafc;
+            --text-color: #334155;
+            --card-bg: #ffffff;
         }
+
         body {
-            font-family: 'Fira Code', 'Microsoft JhengHei', monospace;
-            background-color: var(--dark-bg);
-            color: var(--text-gray);
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif, "Microsoft JhengHei";
+            line-height: 1.7;
+            color: var(--text-color);
+            background-color: var(--bg-color);
             margin: 0;
-            line-height: 1.6;
+            padding: 0;
         }
-        .container {
-            max-width: 1000px;
-            margin: 0 auto;
-            padding: 40px 20px;
-        }
+
+        /* 頂部橫幅 */
         header {
-            height: 60vh;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            border-bottom: 1px solid #233554;
+            background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
+            color: white;
+            padding: 80px 20px;
+            text-align: center;
         }
-        .hero-hi { color: var(--tech-blue); font-size: 1.1em; margin-bottom: 10px; }
-        h1 { font-size: 3.5rem; color: var(--text-light); margin: 0; }
-        .hero-title { font-size: 2.5rem; color: var(--text-gray); font-weight: 600; }
-        
-        section { padding: 80px 0; }
-        h2 { color: var(--text-light); font-size: 1.8rem; border-bottom: 2px solid var(--tech-blue); display: inline-block; margin-bottom: 30px; }
-        
-        /* 技術堆疊卡片 */
-        .tech-stack {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 20px;
-        }
-        .stack-card {
-            background: #112240;
-            padding: 25px;
-            border-radius: 5px;
-            transition: transform 0.3s;
-        }
-        .stack-card:hover { transform: translateY(-10px); }
-        .stack-card h3 { color: var(--tech-blue); margin-top: 0; }
-        .skill-tag { display: inline-block; background: #233554; color: var(--tech-blue); padding: 4px 10px; border-radius: 3px; font-size: 0.8em; margin: 3px; }
 
-        /* 跨領域優勢 */
-        .advantage-box {
-            border-left: 3px solid var(--tech-blue);
-            padding: 10px 20px;
-            background: #112240;
-            margin-bottom: 15px;
+        .container {
+            max-width: 800px;
+            margin: -40px auto 50px;
+            padding: 0 20px;
         }
-        .advantage-box b { color: var(--text-light); }
 
-        .btn {
+        /* 區塊卡片樣式 */
+        .section {
+            background: var(--card-bg);
+            padding: 40px;
+            margin-bottom: 25px;
+            border-radius: 16px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+        }
+
+        h1 { margin: 0; font-size: 2.2em; letter-spacing: 2px; }
+        h2 { color: var(--accent-color); border-left: 5px solid var(--accent-color); padding-left: 15px; margin-bottom: 25px; }
+        h3 { color: var(--primary-color); margin-top: 0; }
+
+        .tagline { font-size: 1.1em; opacity: 0.9; margin-top: 15px; font-weight: 300; }
+
+        /* 標籤樣式 */
+        .badge-group { margin: 15px 0; }
+        .badge {
             display: inline-block;
-            border: 1px solid var(--tech-blue);
-            color: var(--tech-blue);
-            padding: 15px 30px;
-            text-decoration: none;
-            border-radius: 5px;
-            margin-top: 30px;
+            background: #e2e8f0;
+            color: #475569;
+            padding: 6px 14px;
+            border-radius: 50px;
+            font-size: 0.85em;
+            margin: 0 8px 8px 0;
             transition: 0.3s;
         }
-        .btn:hover { background: rgba(0, 212, 255, 0.1); }
+        .badge:hover { background: var(--accent-color); color: white; }
+
+        /* 經歷條列 */
+        .exp-item {
+            border-bottom: 1px solid #f1f5f9;
+            padding: 15px 0;
+        }
+        .exp-item:last-child { border: none; }
+        .exp-title { font-weight: bold; color: var(--primary-color); }
+        .exp-date { font-size: 0.9em; color: #94a3b8; margin-bottom: 5px; }
+
+        footer {
+            text-align: center;
+            padding: 30px;
+            color: #94a3b8;
+            font-size: 0.9em;
+        }
+
+        a { color: var(--accent-color); text-decoration: none; }
     </style>
 </head>
 <body>
 
+<header>
+    <h1>黃畯煜 (Jun-Yu)</h1>
+    <p class="tagline">8 年審計經驗的邏輯思維 ⚖️ × 邁向全端開發的實踐者 💻</p>
+</header>
+
 <div class="container">
-    <header>
-        <div class="hero-hi">Hi, my name is</div>
-        <h1>黃畯煜 (Yu Huang)</h1>
-        <div class="hero-title">專注於邏輯與實踐的全端開發者</div>
-        <p style="max-width: 600px;">
-            畢業於數位內容應用與管理系，擁有 10 年跨領域實戰經驗。
-            具備<b>會計審計</b>的嚴謹邏輯與<b>電商客服</b>的使用者洞察，致力於開發兼具功能性與優質體驗的 Web 應用程式。
-        </p>
-        <a href="mailto:handsome.yu.hjy@gmail.com" class="btn">聯繫我</a>
-    </header>
-
-    <section id="tech">
-        <h2>技術堆疊 (Skills)</h2>
-        <div class="tech-stack">
-            <div class="stack-card">
-                <h3>Frontend</h3>
-                <span class="skill-tag">HTML5 / CSS3</span>
-                <span class="skill-tag">JavaScript (ES6+)</span>
-                <span class="skill-tag">Responsive Design</span>
-                <span class="skill-tag">UI/UX Insight</span>
-            </div>
-            <div class="stack-card">
-                <h3>Backend & Tools</h3>
-                <span class="skill-tag">Node.js / Express</span>
-                <span class="skill-tag">SQL (Data Logic)</span>
-                <span class="skill-tag">Git Version Control</span>
-                <span class="skill-tag">RESTful API</span>
-            </div>
-            <div class="stack-card">
-                <h3>Soft Skills</h3>
-                <span class="skill-tag">邏輯分析 (會計背景)</span>
-                <span class="skill-tag">團隊管理 (主管經驗)</span>
-                <span class="skill-tag">跨部門溝通</span>
-            </div>
-        </div>
-    </section>
-
-    <section id="transferable">
-        <h2>轉型優勢 (Transferable Skills)</h2>
-        <div class="advantage-box">
-            <b>會計審計邏輯 ：</b>
-            具備處理複雜帳務報表的經驗，能將此精密邏輯轉化為後端資料庫設計與複雜演算法的實作。
-        </div>
-        <div class="advantage-box">
-            <b>數位內容背景 ：</b>
-            文藻語大數位內容系畢業，對多媒體整合與網頁前端開發具備系統性的基礎與美感認知。
-        </div>
-        <div class="advantage-box">
-            <b>電商實務洞察 ：</b>
-            於酷彭 (Coupang) 的客服經驗，讓我能從終端使用者角度出發，優化前端介面流程。
-        </div>
-    </section>
-
-    <section id="certs">
-        <h2>專業認證</h2>
+    <section class="section">
+        <h2>關於我 | About Me</h2>
         <p>
-            除技術開發外，具備國家級<b>電腦軟體應用 [cite: 83]</b>及<b>會計事務 [cite: 81]</b>技術士證照，證明在軟體操作與業務邏輯上的專業度。
+            你好！我是畯煜，目前在 <b>Coupang (酷澎)</b> 擔任遠端客服。我是一位即將邁入 30 歲的跨領域學習者，個性好相處、具備正義感，並始終在職涯中追求<b>「工作效率」與「生活品質」</b>的完美平衡。
         </p>
+        <p>
+            我嚮往友善且透明的溝通環境，喜歡非制式、能像夥伴一樣交流的團隊氛圍。目前正全力投入全端開發技術，目標是將過去八年的商業嚴謹邏輯轉化為穩健的代碼結構。
+        </p>
+        <div class="badge-group">
+            <span class="badge">#全端工程師進修中</span>
+            <span class="badge">#邏輯控</span>
+            <span class="badge">#隨和好相處</span>
+            <span class="badge">#追求平衡生活</span>
+        </div>
     </section>
 
-    <footer style="text-align: center; padding: 40px; border-top: 1px solid #233554;">
-        <p>目前居住於：高雄市前鎮區 [cite: 3, 4]</p>
-        <p>Email: handsome.yu.hjy@gmail.com</p>
-    </footer>
+    <section class="section">
+        <h2>職涯軌跡 | Experience</h2>
+        
+        <div class="exp-item">
+            <div class="exp-date">現在</div>
+            <div class="exp-title">Coupang 酷澎 - 遠端客戶服務</div>
+            <p>磨練遠端協作能力與使用者問題解決技巧，維持高度自律的工作節奏。</p>
+        </div>
+
+        <div class="exp-item">
+            <div class="exp-date">過往亮點</div>
+            <div class="exp-title">花旗銀行 - 信用卡銷售業務 (當期新人王)</div>
+            <p>實證了我的業務溝通能力與抗壓性，善於在變動環境中達成目標。</p>
+        </div>
+
+        <div class="exp-item">
+            <div class="exp-date">深耕領域 (8 年)</div>
+            <div class="exp-title">會計師事務所 - 專業審計</div>
+            <p>長達八年的審計生涯，建立了我對數據的敏感度與極致的邏輯處理能力。</p>
+        </div>
+
+        <div class="exp-item">
+            <div class="exp-date">多樣嘗試</div>
+            <div class="exp-title">高中社團老師 / 零星打工</div>
+            <p>享受教學相長的過程，並具備與不同階層背景對談的靈活性。</p>
+        </div>
+    </section>
+
+    <section class="section">
+        <h2>學習與學歷 | Learning & Education</h2>
+        <p><b>🎓 文藻外語大學</b> - 數位內容應用與管理系</p>
+        <p><b>🎓 高雄高商</b> - 國際貿易科</p>
+        <hr style="border: 0; border-top: 1px solid #eee; margin: 20px 0;">
+        <h3>🛠 目前專注技術</h3>
+        <div class="badge-group">
+            <span class="badge">HTML5 / CSS3</span>
+            <span class="badge">JavaScript (ES6+)</span>
+            <span class="badge">Node.js / Express</span>
+            <span class="badge">Database Logic</span>
+            <span class="badge">Git / Version Control</span>
+        </div>
+    </section>
+
+    <section class="section" style="text-align: center;">
+        <h2>讓我們聊聊 | Contact</h2>
+        <p>我正在尋找一個重視友善溝通與技術品質的團隊。</p>
+        <p>📧 Email: <a href="mailto:your-email@example.com">請填寫您的郵件</a></p>
+        <p>📍 Location: 台灣 (遠端 / 高雄)</p>
+    </section>
 </div>
+
+<footer>
+    <p>&copy; 2024 黃畯煜 Jun-Yu. Stay Passionate, Stay Logical.</p>
+</footer>
 
 </body>
 </html>
