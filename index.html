@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>黃畯煜 | Full-Stack & AI-Assisted Developer</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Noto+Sans+TC:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary: #2563eb;
+            --primary-hover: #1d4ed8;
+            --bg-color: #f8fafc;
+            --card-bg: #ffffff;
+            --text-main: #1e293b;
+            --text-muted: #64748b;
+            --border-color: #e2e8f0;
+            --radius: 12px;
+            --shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', 'Noto Sans TC', sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+
+        header {
+            background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
+            color: white;
+            padding: 50px 30px;
+            border-radius: var(--radius);
+            box-shadow: var(--shadow);
+            margin-bottom: 30px;
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        header h1 {
+            font-size: 2.2rem;
+            font-weight: 700;
+        }
+
+        header p.subtitle {
+            font-size: 1.1rem;
+            color: #94a3b8;
+            font-weight: 450;
+        }
+
+        .header-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-top: 10px;
+        }
+
+        .tag {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 6px 14px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            color: #e2e8f0;
+            backdrop-filter: blur(5px);
+        }
+
+        section {
+            background: var(--card-bg);
+            border-radius: var(--radius);
+            padding: 30px;
+            box-shadow: var(--shadow);
+            margin-bottom: 25px;
+            border: 1px solid var(--border-color);
+        }
+
+        section h2 {
+            font-size: 1.4rem;
+            color: var(--primary);
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            border-bottom: 2px solid var(--border-color);
+            padding-bottom: 10px;
+        }
+
+        .about-text {
+            color: var(--text-muted);
+            font-size: 1rem;
+            margin-bottom: 12px;
+        }
+
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+        }
+
+        .skill-category h3 {
+            font-size: 1rem;
+            color: var(--text-main);
+            margin-bottom: 10px;
+            font-weight: 600;
+        }
+
+        .skill-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+
+        .skill-badge {
+            background: #eff6ff;
+            color: var(--primary);
+            padding: 6px 12px;
+            border-radius: 6px;
+            font-size: 0.9rem;
+            font-weight: 500;
+            border: 1px solid #dbeafe;
+        }
+
+        .timeline-item {
+            position: relative;
+            padding-left: 24px;
+            border-left: 2px solid var(--border-color);
+            margin-bottom: 25px;
+        }
+
+        .timeline-item:last-child {
+            margin-bottom: 0;
+        }
+
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: -7px;
+            top: 5px;
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: var(--primary);
+            border: 2px solid white;
+        }
+
+        .timeline-title {
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: var(--text-main);
+        }
+
+        .timeline-company {
+            font-size: 0.95rem;
+            color: var(--primary);
+            font-weight: 500;
+            margin-bottom: 6px;
+        }
+
+        .timeline-desc {
+            font-size: 0.95rem;
+            color: var(--text-muted);
+        }
+
+        .mentor-card {
+            background: #f1f5f9;
+            padding: 20px;
+            border-radius: 8px;
+            border-left: 4px solid var(--primary);
+        }
+
+        .mentor-card p {
+            margin-bottom: 6px;
+            color: var(--text-muted);
+        }
+
+        .mentor-card p strong {
+            color: var(--text-main);
+        }
+
+        footer {
+            text-align: center;
+            padding: 20px;
+            color: var(--text-muted);
+            font-size: 0.9rem;
+        }
+
+        @media (max-width: 600px) {
+            header {
+                padding: 30px 20px;
+            }
+            header h1 {
+                font-size: 1.8rem;
+            }
+            section {
+                padding: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <!-- Header 區塊 -->
+        <header>
+            <h1>黃畯煜 (Tzuyu Huang)</h1>
+            <p class="subtitle">全端工程師 (具備 AI 輔助開發能力) | 跨領域問題解決專家</p>
+            <div class="header-tags">
+                <span class="tag"><i class="fa-solid fa-cake-candles"></i> 30歲 / 未婚</span>
+                <span class="tag"><i class="fa-solid fa-trophy"></i> 曾獲花旗新人王</span>
+                <span class="tag"><i class="fa-solid fa-brain"></i> AI 協同開發實戰</span>
+            </div>
+        </header>
+
+        <!-- 關於我 -->
+        <section>
+            <h2><i class="fa-solid fa-user"></i> 關於我</h2>
+            <p class="about-text">
+                你好！我是黃畯煜，目前 30 歲。我擁有跨領域的豐富職場歷練，從花旗銀行的頂尖業務表現（曾獲新人王）、會計事務所的多載審計經驗、服務業與餐飲的洗禮，到目前於酷澎（Coupang）擔任遠端客服，這讓我培養了極佳的溝通協調能力、抗壓性與對細節的敏銳度。
+            </p>
+            <p class="about-text">
+                秉持著對技術的熱情與正義感，我近期完成了全端與 AI 輔助開發的扎實進修。我擅長運用各種主流 AI 工具大幅提升開發效率，並期望能在友善、講求工作生活平衡（Work-Life Balance）的團隊環境中發揮價值，持續朝全端工程師的目標深耕。
+            </p>
+        </section>
+
+        <!-- 專業技能 -->
+        <section>
+            <h2><i class="fa-solid fa-code"></i> 專業技能與工具</h2>
+            <div class="skills-grid">
+                <div class="skill-category">
+                    <h3>程式語言與核心</h3>
+                    <div class="skill-list">
+                        <span class="skill-badge">Java</span>
+                        <span class="skill-badge">資料庫管理 (Database)</span>
+                        <span class="skill-badge">Git 版本控制</span>
+                    </div>
+                </div>
+                <div class="skill-category">
+                    <h3>AI 協同開發工具</h3>
+                    <div class="skill-list">
+                        <span class="skill-badge">Gemini</span>
+                        <span class="skill-badge">GPT</span>
+                        <span class="skill-badge">Claude</span>
+                        <span class="skill-badge">Gallery 等 AI 工具</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 經歷與背景 -->
+        <section>
+            <h2><i class="fa-solid fa-briefcase"></i> 工作與經歷</h2>
+
+            <div class="timeline-item">
+                <div class="timeline-title">遠端客服</div>
+                <div class="timeline-company">酷澎 (Coupang)</div>
+                <div class="timeline-desc">負責遠端客戶服務，具備高效跨部門溝通、處理高壓突發狀況及精準解決客戶痛點的能力。</div>
+            </div>
+            
+            <div class="timeline-item">
+                <div class="timeline-title">信用卡銷售業務</div>
+                <div class="timeline-company">花旗銀行 (Citibank)</div>
+                <div class="timeline-desc">展現優秀的市場開發與溝通談判能力，<strong>榮獲前幾期新人王</strong>，具備極佳的抗壓性與業績達標企圖心。</div>
+            </div>
+
+            <div class="timeline-item">
+                <div class="timeline-title">審計人員</div>
+                <div class="timeline-company">會計事務所（多年經驗）</div>
+                <div class="timeline-desc">累積多年嚴謹的審計經驗，培養高度的邏輯分析能力、風險意識與對數字的極高敏銳度。</div>
+            </div>
+
+            <div class="timeline-item">
+                <div class="timeline-title">社團指導老師</div>
+                <div class="timeline-company">高中社團</div>
+                <div class="timeline-desc">擔任指導老師，負責規劃活動與帶領學生，具備良好的領導力、表達能力與耐心。</div>
+            </div>
+
+            <div class="timeline-item">
+                <div class="timeline-title">服務與零售歷練</div>
+                <div class="timeline-company">餐廳 / 便利商店</div>
+                <div class="timeline-desc">累積第一線面對人群的服務經驗，訓練出親切好相處的特質與高應變能力。</div>
+            </div>
+        </section>
+
+        <!-- 進修與指導老師 -->
+        <section>
+            <h2><i class="fa-solid fa-graduation-cap"></i> 進修與導師背景</h2>
+            <p class="about-text" style="margin-bottom: 15px;">
+                完成全端工程師專業培訓，並專精於結合 AI 工具（AI-Assisted Development）加速產品開發與除錯流程。
+            </p>
+            <div class="mentor-card">
+                <p><strong>指導講師：</strong> 高奕 老師</p>
+                <p><strong>授課單位：</strong> 大數智能</p>
+                <p><strong>聯絡電話：</strong> +1 780-297-7153</p>
+            </div>
+        </section>
+
+        <!-- 頁尾 -->
+        <footer>
+            <p>&copy; 2026 Huang, Tzuyu. All Rights Reserved. Built for GitHub Pages.</p>
+        </footer>
+    </div>
+
+</body>
+</html>
